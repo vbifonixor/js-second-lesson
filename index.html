@@ -1,197 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<title>Shower Presentation Engine</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="shower/themes/material/styles/screen-16x10.css">
 </head>
 <body class="shower list">
 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.10.0/styles/default.min.css">
+<script src="https://cdn.jsdelivr.net/highlight.js/9.10.0/highlight.min.js"></script>
+<style>
+
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #6783AB;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #D52426;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #E76A00;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+  color: #E7B70A;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #B2CA00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+  color: #3380DA;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #A732D8;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: black;
+  color: #0F5491;
+	font-size: 20px;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+
+</style>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<style media="screen">
+		.slide {
+			padding-top: 60px;
+		}
+
+		.slide li {
+			list-style-type: none;
+		}
+		.slide li:before {
+			display: inline;
+			content: ':' !important;
+			color: #000 !important;
+			font-weight: 800;
+		}
+	</style>
+
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>Вторая лекция по Javascript</h1>
+		<p>Массивы и функции</p>
 	</header>
 
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
+		<h2>Javascript</h2>
+		<p><strong>Урок 2.</strong> Массивы и функции.</p>
 		<style>
+			body, p, h1, h2, h3, h4, h5, h6, a, strong, em {
+				font-family: 'Lato' !important;
+				font-weight: 300;
+			}
 			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
+				margin: 80px 0 0;
+				color: #000;
+				text-align: right;
+				font-size: 120px;
+				font-weight: 100;
+			}
 			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
+				margin: 10px 0 0;
+				text-align: right;
+				color: #000;
+				font-size: 45px;
+			}
 		</style>
 	</section>
 
-	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+	<section class="slide white">
+		<style></style>
+		<h2>Массивы</h2>
+		<blockquote cite="Учебник Кантора">
+			<p><strong>Массив</strong> – структура данных, которая предназначена для хранения пронумерованных значений и предлагает дополнительные методы для удобного манипулирования такой коллекцией.</p>
+		</blockquote>
+		<ul>
+			<li>Проще всего массив представить в виде полки, на которой стоят несколько предметов. Каждый предмет - элемент массива. Только в случае с JS, этими предметами могут быть ещё и другие полки. Двумерных массивов в JS нет, но такая возможность легко реализуется с помощью вложенных друг в друга массивов.</li>
+		</ul>
 	</section>
 
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+	<section class="slide white">
+		<h2>Объявление массива</h2>
+		<pre><code lang="javascript">let array = ['Вячеслав', 'Марк', 'Анна', 'Елена', 'Анна', ...];</code></pre>
+		<p>Массивы в JS не имеют ограничений по размеру (кроме, может быть, ограничений памяти) и по типу вмещаемых ими данных (т.е. можно затолкать туда и строку, и число, и объекты, и функции и т. д.)</p>
 	</section>
 
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+	<section class="slide white">
+		<h2>Свойство length</h2>
+		<pre><code>console.log(array.length); // выведет длину массива</code></pre>
+		<p>Как ни странно, но два пустых массива в JS не являются одним и тем же значением, поэтому</p>
+		<pre><code>console.log([] === []); // вернёт false</code></pre>
+		<p>При этом это не точно так же, как и с NaN. Если мы возьмём одну переменную, которой присвоен массив и сравним её с самой собой, </p>
+		<pre><code>console.log(array === array); // => true</code></pre>
 	</section>
 
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
-
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
-
-	<section class="slide">
-		<h2>Code samples</h2>
+	<section class="slide white">
+		<h2>Свойство length</h2>
+		<p>Поэтому проверить, является ли массив пустым можно вот так:</p>
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code>if (array.length === 0) {
+	something();
+}</code>
 		</pre>
+		<p>А ещё со свойством length можно играться и этим самым совершать определённые непотребности с нашим массивом (но мы этим заниматься не будем). Это же свойство есть и у строк (я говорил об этом на предыдущем занятии)</p>
 	</section>
 
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+	<section class="slide white">
+		<h2>Методы массива</h2>
+		<p>У массивов много мощных методов, которые позволяют делать с ним практически всё, что угодно.</p>
+		<pre><code>.push() // Добавляет значение в массив (в конец)
+.pop() // Удаляет значение из массива, возвращает удалённое
+значение (из конца)
+.shift() и .unshift() // Действуют точно также, только
+добавляют и удаляют из начала массива</code></pre>
+<p class="note">Очень много вкусных и необходимых методов можно найти на <a href="https://learn.javascript.ru/array-methods">https://learn.javascript.ru/array-methods</a></p>
+	</section>
+	<section class="slide white">
+		<h2>Функции</h2>
+		<br>
+		<br>
+		<pre><code>function doSomethingCool(name, age) {
+	console.log('Имя: ' + name + '/nВозраст: ' + age);
+	return {name, age};
+}</code></pre>
+	</section>
+	<section class="slide white">
+		<h2>Область видимости</h2>
+		<pre><code>let a = 13;
+let b = 15;
+function spam() {
+	let a = 10; // a внутри области видимости функции spam
+	console.log(a); // 10
+	b = a + 2; // b не объявлена в функции
+	return a; // всё так же 10
+}
+let eggs = spam(); // 10
+console.log(a, eggs, b); // 13 10 12
+</code></pre>
+	</section>
+	<section class="slide white">
+		<h2>Hoisting</h2>
+		<p>Hoisting (поднятие) - это когда объявления функций и переменных поднимаются в начало кода внутри области видимости.</p>
+		<pre><code>iAmTotallyCoolFunction(); // => "Yes, I am!"
+
+function iAmTotallyCoolFunction() {
+	console.log("Yes, I am!");
+}</code></pre>
+	<p>И это сработает</p>
+	<mark><strong>Но предпочтительно всегда писать объявления сверху!</strong></mark>
+	</section>
+	<section class="slide white">
+		<h2>Замыкания</h2>
+		<p>Замыкание - внешние переменные для функции.</p>
+		<pre><code style="line-height: 1.3;">var phrase = 'Апути!';
+function say() {
+	let text = phrase
+	function go() {
+		console.log( text ); // найдёт переменную снаружи
+	}
+	return go;
+}
+let a = say();
+a(); // 'Апути!'
+phrase = 'Нипутю!';
+let b = say();
+a(); // 'Апути!'
+b(); // 'Нипутю!'
+</code></pre>
+	</section>
+	<section class="slide white">
+		<style>.subheading {
+			/*font-size: 18px;*/
+			margin-top: -40px;
+		}</style>
+		<h2>Коллбэки и таймеры</h2>
+		<p class="subheading">и стрелочные функции</p>
+		<pre><code>setTimeout(() => { console.log('In a second!') }, 1000)</code></pre>
+		<pre><code>setInterval(() => { console.log('another second!') }, 1000)</code></pre>
+		<p>Функции-параметры у setTimeout и setInterval выполняются <strong>асинхронно</strong>, поэтому "In a second!" и первое "another second!" выведутся (почти) одновременно.</p>
+		<p>У стрелочных функций нет своей локальной области видимости, поэтому их удобно вызывать в качестве <strong>функций обратного вызова</strong></p>
+	</section>
+	<section class="slide white">
+		<h2>Крутые методы массивов</h2>
+		<pre><code>.filter(callback(item, index, arr)) // фильтрует массив
+.sort(callback(item, index, arr)) // сортирует массив
+.map(callback(item, index, arr)) // совершает действие над каждым элементом
+.reduce(callback(item, index, arr)) // позволяет "усреднить" массив</code></pre>
+</section>
+
+	<section class="slide white">
+		<h2>Домашнее задание</h2>
+		<ul>
+			<li>На основе предыдущего задания сделать функцию, которая принимает длину самого нижнего ряда треугольника в качестве аргумента и выводит сам треугольник</li>
+			<li>Отсортировать массив строк по количеству символов в каждой</li>
+			<li>По желанию сделать функцию, которая сортирует массив по возрастанию, если аргумент равен true, и по убыванию, если нет.</li>
+		</ul>
 	</section>
 
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
+	<section class="slide white">
+		<h2>Командная работа</h2>
+		<ul>
+			<li>Так как с предыдущим заданием команды справились <strong>с переменным успехом</strong>, помогаю всем разобраться с git.</li>
+			<li>Задание на следующее занятие - <mark>придумать идею для проекта</mark> и запушить её в github-репозиторий команды.</li>
+		</ul>
 	</section>
-
-	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
-
-	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
-	</section>
-
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
-
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</section>
-
 	<footer class="badge">
 		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
 	</footer>
